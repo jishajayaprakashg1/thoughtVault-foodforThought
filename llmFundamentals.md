@@ -1,5 +1,5 @@
 ## LLM Fundamentals
-Large Language Model: AI model trained on huge datasets work son neural networks
+Large Language Model: It is a trained neural network whose learned parameters enable it to predict and generate sequences of tokens.
 
 ## PRETRAINING
 
@@ -18,5 +18,30 @@ Email addresses and public IP addresses are anonymized. The pipeline also record
  
 ### Step2: Tokenisation : convert the text into (sequence of symbold) tokens
 bites converted to bytes then run byte pair encoding algorithm ( merge most common token pair to mint new token)
+For example the text is converted into 100277 tokens finally. this is called the vocabulary
 
-### Step3: Nueral Network Training : 
+### Step3: Neural Network Training : 
+The sequence of tokens generated in the Step 2 is divide into window of tokens
+- this input sequence of tokens (anywhere between 0 to a max size say 8000 tokens) is fed into neural network an is called context, there is 100277 probabilities of next token
+- each nearest token is assigned a weight, the highest weighted token is the next predicated token
+Example:
+91 860 245 6781
+It is  a    rainy
+ --> neural network (100277 probabilities) --> probability of 234 ("Day") : 5%,  probability of 234 ("season") : 2%
+
+_Neural Network Internals_: 
+input sequence of tokens is combined with the weights to form mathematical expressions which will do the next prediction.
+In this process the parameters (weights) are adjusted and optimized to make the prediction consistent and correct over time.
+
+### Step4: Inference : generate data, one token at a time
+_What happens during inference?_
+- Input: The model receives text, images, or other data.
+- Forward pass: The input passes through the neural network.
+- Probability calculation: The model calculates scores for possible outputs and, for language models, can convert them into probabilities.
+- Prediction: The model selects or samples an output.
+- Iteration: For text generation, the new token is added to the context, and the process repeats.
+
+
+
+
+
