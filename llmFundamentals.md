@@ -104,7 +104,7 @@ Repeat
 To summarise an SFT model will mimick an expert's answer but a RL model will think and come up woth different solutions and present the
 shortest and right solution.
 
-## Stage3: REINFORCEMENT Learning from Human Feedback --> output is a RLHF model
+## Stage4: REINFORCEMENT Learning from Human Feedback --> output is a RLHF model
 - Human must give orders / score for the output.
 - Train another model call it reward model which will act as a human scorer for the solutions generated during thinking process by LLM.
 - Reward model will give a score between 0 and 1 --> 0 being the worst score.
