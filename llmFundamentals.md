@@ -110,6 +110,25 @@ shortest and right solution.
 - Reward model will give a score between 0 and 1 --> 0 being the worst score.
 - Reward model is trained such that it's scores must become consistent with the  Human ordering at the end
 
+## SUMMARY
+```
+User enters a query in chatGPT.
+This query is chopped into tokens (can be viewed in toktokenizer)  as it goes through the conversational Protocol/format .
+Hence, a one-dimensional sequence of tokens is generated and it continues to generate tokens in response.
+
+How was it able to do it?
+Knowledge acquisition through internet,
+finetuned
+Open AI has hired Data labellers, often called AI trainers or data annotators
+there will be thousands of prompts each of which has to be answered by the human data labeller,
+who follows the labelling instructions at open AI.
+
+Hence, the response of the prompt is actually a neural network simulation of the data labeller's response.
+```
+
+
+
+
 
 
 
