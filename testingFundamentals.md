@@ -14,10 +14,25 @@
 + Based on technique:
   - Black box : Tests the application's functionality without knowledge of its internal code, focusing on inputs, outputs, and expected behavior.
     Example: Login with username and pssword
+   ```
+   Equivalence Partitioning: Test valid and invalid usernames.
+   Boundary Value Analysis: Test password minimum and maximum length.
+   Decision Table: Test valid/invalid username and password combinations.
+   State Transition: Test account locking after multiple failed login attempts.
+   Use Case Testing: Test the complete login process.
+   Error Guessing: Try blank fields, special characters, spaces, and SQL-like input.
+   ```
+
   - White box : Tests the application's internal code, logic, and structure with knowledge of its implementation.
     Example: Test every statement, condition, loop involved
+    
   - Grey box : Tests the application with partial knowledge of its internal structure, combining elements of Black Box and White Box Testing.
     Example: Verify DB and API calls
+    ```
+    Regression
+    Database
+    API
+    ```
 
 ### The 7 Core Principles of Software Testing
 1. Testing shows the presence of defects, not their absence:
@@ -47,3 +62,4 @@
 7. Absence of errors fallacy:
 - The Concept: Finding and fixing a high volume of bugs is irrelevant if the resulting system fails to meet user needs or business goals.
 - The Reality: A piece of software can be 100% technically stable and clean, yet still be a failure if it provides a bad user experience or implements incorrect business requirements.
+
