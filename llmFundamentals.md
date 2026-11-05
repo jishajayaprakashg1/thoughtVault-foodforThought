@@ -16,7 +16,7 @@ Documents with an English-language score below 0.65 are removed from the origina
 Email addresses and public IP addresses are anonymized. The pipeline also records metadata such as language, language confidence, and token count.
 - 7. _Publish and train_ : The processed documents are stored in a dataset that researchers can download and use to pretrain language models.
  
-### Step2: Tokenisation : convert the text into (sequence of symbold) tokens
+### Step2: Tokenisation : convert the text into (sequence of symbol) tokens
 bites converted to bytes then run byte pair encoding algorithm ( merge most common token pair to mint new token)
 For example the text is converted into 100277 tokens finally. this is called the vocabulary
 
