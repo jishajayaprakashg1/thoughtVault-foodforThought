@@ -72,9 +72,9 @@ npx playwright show-report
 
 ### What are the extensions to install?
 ```
-1. Playwright Test For VS Code : a triangle symbol will appear on the left side, you can click to run it the test
-2. Playwright runner by Koushik : a triangle symbol will appear on top of a test with heading: Execute Playwright Test: This will show the command that is executed with test file name and line number
-3. Playwright Snippets by Nitay Neeman : type pw- and commands will be auto generated.
-4. Playwright Test Snippets by Mark Skelton
+1. Playwright Test For VS Code : this is official extension : a triangle symbol will appear on the left side, you can click to run it the test
+2. Playwright runner by Koushik : this is third-party extension : a triangle symbol will appear on top of a test with heading: Execute Playwright Test: This will show the command that is executed with test file name and line number
+3. Playwright Snippets by Nitay Neeman : this is third-party extension : type pw- and commands will be auto generated.
+4. Playwright Test Snippets by Mark Skelton : this is third-party extension
 ```
 
