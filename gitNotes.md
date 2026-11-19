@@ -1,7 +1,10 @@
+************************************************************************************************************************************
+
 # GIT : Global Information Tracker: 
 - GIT : is a version control system that tracks your file.
 - Online platform like GITHUB/GITLAB is used for collaboration and storing code on cloud.
-
+  
+************************************************************************************************************************************
 ### Steps
 - Step1: Install GIT
   ```
@@ -56,6 +59,8 @@ and the local repository (contains metadata and object database for the project)
   to view the commit
   ```
   git log
+  OR
+  git log --oneline
   ```
   _what happens ewhen we make a commit?
   ```
@@ -83,7 +88,13 @@ and the local repository (contains metadata and object database for the project)
   git push -u origin main
   ```
 
-- Step8: Suppose you want to use SSH protocol for transfer of data to and from remote repository, you will need a public/private key pair
+- Step8: SSH: Secure Shell Key :  are two files one has private key and other has public key residing in the local system.
+private key : authorises you to push and pull code
+public key : authenticates with GITHUB
+
+PAT: Personal Access Token : create for tools that need authentication
+
+Suppose you want to use SSH protocol for transfer of data to and from remote repository, you will need a public/private key pair
   Create new SSH key
   ```
   ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -315,19 +326,58 @@ git cherry-pick commitId
 cherry-pick creates a duplicate commit
 To deploy a hot fix we can go for cherry-pick.
 
-   
+### Merge conflicts
+_Merge conflict occurs when same file or same lines of code are modified in main and dev branch
+GIT will not understand which changes have to be kept, hence human intervention is required._
+
+### Amend
+_Say a new file is added then you do git add, git commit. Then you modify an existing file and do git add, git commit.
+In this case two commits will be created but you want only one commit with both changes. So instead of git commit use command:
+```
+git commit --amend
+```
+
+### Removing changes from staging area and working directory
+_To discard changes made to file or maintain the old version of the file_
+
+_To move file from staging area to working directory_
+```
+git restore --staged fileName
+```
+
+_To move file from working directory_
+```
+git restore fileName
+```
+
+### reset command
+_reset moves my branch to previous commit_
+
+Supports multiple modes:
+git reset --soft HEAD~1   (move the branch and stage the changes)
+git reset --mixed HEAD~1  OR git reset HEAD~1   (move the branch and unstage the changes)
+git reset --hard HEAD~1   (move the branch and discard the changes)
+
+### reverting commits
+```
+git log
+
+git revert commitId
+A new commit will be created after this
+
+git push
+```
+
+### GIT workflows
+- Centralised workflow : there is a shared repository, multiple contributors have access to read and write from it.
+- Integration manager workflow : There is a Blessed repository to which the integration manager has access.
+  Every contributor will have their own copy of the blessed repository.
+  They can read from blessed repo but not write into it.
+  Contributor will write to their own public repo which are forks of the blessed repository.
+  Integration manager pulls from forks and pushes to blessed repository.
+- Dictator and Lieutenants: it has a dictator and multiple lieutenants.
+  lieutenants pull from contributors public repo, dictator pulls form lieutenants and pushes to the blessed repo.
 ************************************************************************************************************************************
-
-* Commands to push changes to empty repo in GITHUB, First log in to the GITHUB repo and create an empty repository.
-
-Go to VS code:
-git init
-git config --global user.name ""
-git config --global user.email  ""
-git add .
-git commit -m "initial commit"
-git remote add origin <GitHub project url>
-git push -u origin master
 
 git show (show all the history)
 
@@ -345,26 +395,12 @@ Newer commands focussing on branch : switch
 git switch main
 git switch -c feature
 
-git restore file.txt  (to discard changes made to file or maintain the old version of the file)
 
 gitignore.io (to get templates)
 .gitignore (will keep the project clean)
 
-reset moves my branch to previous commit
-git reset --soft HEAD~1   (move the branch and stage the changes)
-git reset --mixed HEAD~1  (move the branch and unstage the changes)
-git reset --hard HEAD~1   (move the branch and discard the changes)
 
 
-SSH: Secure Shell Key :  are two files one has private key and other has public key residing in the local system.
-private key : authorises you to push and pull code
-public key : authenticates with GITHUB
-
-PAT: Personal Access Token : create for tools that need authentication
+************************************************************************************************************************************
 
 
-
-# ## Three types of automation
-- WEB-UI
-- API
-- MOBILE
